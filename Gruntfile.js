@@ -150,7 +150,7 @@ module.exports = function (grunt) {
                 imagesDir: '<%= yeoman.app %>/static/images',
                 javascriptsDir: '<%= yeoman.app %>/static/scripts',
                 fontsDir: '<%= yeoman.app %>/static/styles/fonts',
-                importPath: '<%= yeoman.app %>/bower_components',
+                importPath: '<%= yeoman.app %>/static/bower_components',
                 relativeAssets: true
             },
             dist: {},
@@ -185,14 +185,14 @@ module.exports = function (grunt) {
         useminPrepare: {
             html: '<%= yeoman.app %>/index.html',
             options: {
-                dest: '<%= yeoman.dist %>/static'
+                dest: '<%= yeoman.dist %>'
             }
         },
         usemin: {
             html: ['<%= yeoman.dist %>/{,*/}*.html'],
             css: ['<%= yeoman.dist %>/static/styles/{,*/}*.css'],
             options: {
-                dirs: ['<%= yeoman.dist %>/static']
+                dirs: ['<%= yeoman.dist %>']
             }
         },
         imagemin: {
