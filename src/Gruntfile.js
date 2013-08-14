@@ -19,7 +19,7 @@ module.exports = function (grunt) {
     // configurable paths
     var yeomanConfig = {
         app: 'app',
-        dist: 'dest'
+        dist: '../'
     };
 
     grunt.initConfig({
@@ -100,7 +100,7 @@ module.exports = function (grunt) {
         },
         clean: {
             options: { force: true },
-            dist: ['.tmp', '<%= yeoman.dist %>/*'],
+            dist: ['.tmp', '<%= yeoman.dist %>/static/*'],
             server: '.tmp'
         },
         jshint: {
@@ -130,7 +130,7 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: '<%= yeoman.app %>/static/scripts',
                     src: '{,*/}*.coffee',
-                    dest: '.tmp/scripts',
+                    dest: '.tmp/static/scripts',
                     ext: '.js'
                 }]
             },
@@ -146,7 +146,7 @@ module.exports = function (grunt) {
         compass: {
             options: {
                 sassDir: '<%= yeoman.app %>/static/styles',
-                cssDir: '.tmp/styles',
+                cssDir: '.tmp/static/styles',
                 imagesDir: '<%= yeoman.app %>/static/images',
                 javascriptsDir: '<%= yeoman.app %>/static/scripts',
                 fontsDir: '<%= yeoman.app %>/static/styles/fonts',
@@ -209,7 +209,7 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     '<%= yeoman.dist %>/static/styles/main.css': [
-                        '.tmp/styles/{,*/}*.css',
+                        '.tmp/static/styles/{,*/}*.css',
                         '<%= yeoman.app %>/static/styles/{,*/}*.css'
                     ]
                 }
